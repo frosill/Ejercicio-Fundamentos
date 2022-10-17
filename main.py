@@ -19,6 +19,8 @@ while True :
 
     info_general = [personaje, frase]
 
+    print(*info_general)
+
     if personaje == 'Hommer Simpson':
 
       info_hommer = [personaje, frase]

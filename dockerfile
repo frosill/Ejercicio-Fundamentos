@@ -1,9 +1,16 @@
-FROM python:3.9.1
+FROM python:3.9.12
 
-COPY python_code/main.py .
+COPY ./main.py /app/
+COPY ./requirements.txt /app/
 
-RUN mkdir /General
-RUN mkdir /Homer
-RUN mkdir /Lisa
+WORKDIR /app/
 
-CMD ["python", "main.py"]
+RUN mkdir /app/General
+RUN touch /app/General/general.csv
+RUN mkdir /app/Homer
+RUN touch /app/Homer/homer.csv
+RUN mkdir /app/Lisa
+RUN touch /app/Lisa/lisa.csv
+RUN pip3 install -r requirements.txt
+
+ENTRYPOINT [ "python3", "main.py" ]
