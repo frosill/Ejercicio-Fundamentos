@@ -58,8 +58,8 @@ while True :
 
 #Con un try va creando las carpetas de cada personaje, para que si trata de crear la carpeta de un personaje que ya existe, no salte error
     try:
-      os.mkdir(f'{personaje}')
-      imagen_local = f'{personaje}/{personaje}.png'
+      os.mkdir(f'Personajes/{personaje}')
+      imagen_local = f'Personajes/{personaje}/{personaje}.png'
 
 #Genera los CSVs en la carpeta que corresponde 
     #Genera CSV General
@@ -73,7 +73,7 @@ while True :
       my_dict2 = {'frase': frase, 'personaje': personaje}
 
       if personaje == 'Homer Simpson':
-        with open (f'{personaje}/{personaje}.csv','a') as f:
+        with open (f'Personajes/{personaje}/{personaje}.csv','a') as f:
           a= csv.DictWriter(f, my_dict2.keys())
           a.writerow(my_dict2)
 
@@ -81,7 +81,7 @@ while True :
       my_dict3 = {'frase': frase, 'personaje': personaje}
 
       if personaje == 'Lisa Simpson':
-        with open (f'{personaje}/{personaje}.csv','a') as f:
+        with open (f'Personajes/{personaje}/{personaje}.csv','a') as f:
           a= csv.DictWriter(f, my_dict3.keys())
           a.writerow(my_dict3)
 
