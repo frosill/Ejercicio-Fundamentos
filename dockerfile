@@ -6,7 +6,6 @@ COPY ./requirements.txt /app/
 WORKDIR /app/
 
 RUN mkdir /app/General
-RUN touch /app/General
 RUN mkdir /app/Personajes
 
 RUN pip3 install -r requirements.txt
