@@ -1,6 +1,7 @@
 
 # Solicitar a la API una quote cada 30 seg
 
+from tkinter import W
 import requests
 import json
 import time
@@ -25,17 +26,15 @@ while True :
     words_wp = frase.split()  #Separa str en lista de palabras con signos de puntuación
     words = []                #Inicializa lista de palabras sin signos de puntuación
 
-    for word_wp in words_wp:
-      words.append(''.join([i for i in word_wp if i not in string.punctuation]))
+    for n in words_wp:
+      words.append(''.join([i for i in n if i not in string.punctuation])) #Elimina los signos de puntuación de las palabras
 
-#Va añadiendo las palabras que ha encontrado al diccionario por medio del bucle
-    for word in words:
-      if word not in contador_palabras.keys():
-        contador_palabras[word] = words.count(word)
+    for w in words:
+      if w in contador_palabras: #Si la palabrá está en el diccionario
+        aparicion1 = contador_palabras[w]
+        contador_palabras[w] = aparicion1 + 1
       else:
-        contador_palabras[word] += words.count(word)
-      # Si ya existe le añade las veces oprtunas
-      
+        contador_palabras[w] = 1
 
 # Crea fichero de texto donde va almacenando la cuenta de palabras
     with open ('CuentaPalabras.txt', 'w') as cuentapalabras:
