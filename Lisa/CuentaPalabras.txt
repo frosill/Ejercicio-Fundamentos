@@ -1,0 +1,8 @@
+
+I: 1
+think: 1
+women: 1
+and: 1
+seamen: 1
+dont: 1
+mix: 1

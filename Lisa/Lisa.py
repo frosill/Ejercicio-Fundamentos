@@ -87,7 +87,7 @@ while True :
       if e.errno != errno.EEXIST:
         raise
 
-    time.sleep(0)
+    time.sleep(30)
 
     
 
